@@ -95,15 +95,15 @@ Im Powerfull Management Bot And I Will Help In Managing Your Group.
 
 buttons = [
     [      
-        InlineKeyboardButton(text="👨‍✈️ Support", url=f"http://t.me/{UPDATE_CHANNEL}"),
-        InlineKeyboardButton(text="Channel 🧑🏼‍💻", url=f"https://t.me/{SUPPORT_CHAT}"),
+        InlineKeyboardButton(text="👨‍✈️ Sᴜᴘᴘᴏʀᴛ", url=f"http://t.me/{UPDATE_CHANNEL}"),
+        InlineKeyboardButton(text="Cʜᴀɴɴᴇʟ 🧑🏼‍💻", url=f"https://t.me/{SUPPORT_CHAT}"),
     ],
    [
-        InlineKeyboardButton(text="💁Basic Info", callback_data="about_"),
-        InlineKeyboardButton(text="Basic Cmd 👷🏻", callback_data="tiana_"),
+        InlineKeyboardButton(text="💁Bᴀsɪᴄ Iɴғᴏ", callback_data="about_"),
+        InlineKeyboardButton(text="Bᴀsɪᴄ Cᴍᴅ 👷🏻", callback_data="tiana_"),
     ],
     [  
-        InlineKeyboardButton(text="Add me to your Group", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"),
+        InlineKeyboardButton(text="✚ Aᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ Gʀᴏᴜᴘ ✚", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"),
     ], 
     
 ]
