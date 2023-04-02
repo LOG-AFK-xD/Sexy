@@ -82,29 +82,28 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-*Hᴇʟʟᴏ {} * [!]({})
+[🌈]' ☞ *✰Hello... Friends {}*  [!]({})
 ───────────────────────
-× *I'ᴍ Aɴɪᴍᴇ-Tʜᴇᴍᴇ Gʀᴏᴜᴘ Mᴀɴᴀɢᴇᴍᴇɴᴛ Bᴏᴛ*
-× *I'ᴍ Vᴇʀʏ Fᴀꜱᴛ Aɴᴅ Mᴏʀᴇ Eꜰꜰɪᴄɪᴇɴᴛ I Pʀᴏᴠɪᴅᴇ Aᴡᴇꜱᴏᴍᴇ Fᴇᴀᴛᴜʀᴇꜱ!*
+Im Powerfull Management Bot And I Will Help In Managing Your Group.
+➖➖➖➖➖➖➖➖➖➖➖➖➖
+× *Uptime:* {}
+× {} *User, Across* {} *Chats.*
+➖➖➖➖➖➖➖➖➖➖➖➖➖
+➤ Try The Help Buttons Below To Know My Abilities. 
 ───────────────────────
-× *Uᴘᴛɪᴍᴇ:* `{}`
-× `{}` *Uꜱᴇʀ, Aᴄʀᴏꜱꜱ* `{}` *Cʜᴀᴛꜱ.*
-───────────────────────"""
+"""
 
 buttons = [
-    [
-        InlineKeyboardButton(text="❓ 𝘾𝙤𝙢𝙢𝙖𝙣𝙙 𝙃𝙚𝙡𝙥 ❗️", callback_data="tiana_"),
-    ],
-    [
-        InlineKeyboardButton(text="👩‍💻 𝙄𝙣𝙛𝙤", callback_data="about_"),
-        InlineKeyboardButton(text="𝙊𝙬𝙣𝙚𝙧 👨‍✈️", url=f"https://t.me/{OWNER_USERNAME}"),
+    [      
+        InlineKeyboardButton(text="👨‍✈️ Support", url=f"http://t.me/{UPDATE_CHANNEL}"),
+        InlineKeyboardButton(text="Channel 🧑🏼‍💻", url=f"https://t.me/{SUPPORT_CHAT}"),
     ],
    [
-        InlineKeyboardButton(text="📇 𝙐𝙥𝙙𝙖𝙩𝙚𝙨", url=f"http://t.me/{UPDATE_CHANNEL}"),
-        InlineKeyboardButton(text="𝙎𝙪𝙥𝙥𝙤𝙧𝙩 🫂", url=f"https://t.me/{SUPPORT_CHAT}"),
+        InlineKeyboardButton(text="💁Basic Info", callback_data="about_"),
+        InlineKeyboardButton(text="Basic Cmd 👷🏻", callback_data="tiana_"),
     ],
     [  
-        InlineKeyboardButton(text="➕️ 𝘼𝙙𝙙 𝙢𝙚 𝙩𝙤 𝙔𝙤𝙪𝙧 𝙂𝙧𝙤𝙪𝙥 ➕️", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"),
+        InlineKeyboardButton(text="Add me to your Group", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"),
     ], 
     
 ]
@@ -247,8 +246,8 @@ def start(update: Update, context: CallbackContext):
                     sql.num_chats()),
                 reply_markup=InlineKeyboardMarkup(
                  [
-                  [InlineKeyboardButton(text="📄 Source", url="https://github.com/prince-botz/tianabot"), 
-                   InlineKeyboardButton(text="🫂 Support", url=f"https://t.me/{SUPPORT_CHAT}")]
+                  [InlineKeyboardButton(text="👨‍✈️ Support", url=f"https://t.me/{SUPPORT_CHAT}"), 
+                   InlineKeyboardButton(text="💁 Updates", url=f"http://t.me/{UPDATE_CHANNEL}")]
                  ]
               ),
                 parse_mode=ParseMode.MARKDOWN,              
@@ -325,7 +324,7 @@ def help_button(update, context):
         if mod_match:
             module = mod_match.group(1)
             text = (
-                "「 Hᴇʟᴘ ᴏғ *{}* 」:\n".format(
+                "「 Help Of *{}* 」:\n".format(
                     HELPABLE[module].__mod_name__
                 )
                 + HELPABLE[module].__help__
@@ -361,20 +360,20 @@ def tiana_callback_handler(update, context):
     query = update.callback_query
     if query.data == "tiana_":
         query.message.edit_text(
-            text="""𝙒𝙚𝙡𝙘𝙤𝙢𝙚 𝙩𝙤 𝙃𝙚𝙡𝙥 𝙈𝙚𝙣𝙪. 
+            text="""Welcome To Help Menu. 
 ────────────────────────
-*Sᴇʟᴇᴄᴛ  Aʟʟ  Cᴏᴍᴍᴀɴᴅs  Fᴏʀ  Fᴜʟʟ  Hᴇʟᴘ  Oʀ  Sᴇʟᴇᴄᴛ  Cᴀᴛᴀɢᴏʀʏ  Fᴏʀ  Mᴏʀᴇ  Hᴇʟᴘ  Dᴏᴄᴜᴍᴇɴᴛᴀᴛɪᴏɴ  Oɴ  Sᴇʟᴇᴄᴛᴇᴅ  Fɪᴇʟᴅs*""",
+*Select All Commands For Full Help Or Select Category For More Help Documentation On Selected Fields*""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                     InlineKeyboardButton(text="➕ 𝘼𝙡𝙡 𝘾𝙤𝙢𝙢𝙖𝙣𝙙𝙨 ➕", callback_data="help_back"),
+                     InlineKeyboardButton(text="➕ Aʟʟ Cᴏᴍᴍᴀɴᴅs ➕", callback_data="help_back"),
                     ],                           
-                    [InlineKeyboardButton(text="𝙃𝙤𝙬 𝙏𝙤 𝙐𝙨𝙚 𝙈𝙚 ❓", callback_data="tiana_help"),
-                     InlineKeyboardButton(text="𝙈𝙪𝙨𝙞𝙘 𝘽𝙤𝙩 🎧", callback_data="tiana_music")],
-                    [InlineKeyboardButton(text="🔙 𝘽𝙖𝙘𝙠", callback_data="tiana_back"),
-                     InlineKeyboardButton(text="𝙄𝙣𝙡𝙞𝙣𝙚 🔗", switch_inline_query_current_chat="")],
+                    [InlineKeyboardButton(text="Hᴏᴡ Tᴏ Usᴇ Mᴇ ❓", callback_data="tiana_help"),
+                     InlineKeyboardButton(text="Mᴜsɪᴄ Bᴏᴛ 🎧", callback_data="tiana_music")],
+                    [InlineKeyboardButton(text="🔙 Bᴀᴄᴋ", callback_data="tiana_back"),
+                     InlineKeyboardButton(text="Iɴʟɪɴᴇ 🔗", switch_inline_query_current_chat="")],
                 ]
             ),
         )
@@ -395,14 +394,14 @@ def tiana_callback_handler(update, context):
         )
     elif query.data == "tiana_help":
         query.message.edit_text(
-            text=f"""*Nᴇᴡ  Tᴏ  {BOT_NAME}!  Hᴇʀᴇ  Is  Tʜᴇ  Qᴜɪᴄᴋ  Sᴛᴀʀᴛ  Gᴜɪᴅᴇ  Wʜɪᴄʜ  Wɪʟʟ  Hᴇʟᴘ  Yᴏᴜ  Tᴏ  Uɴᴅᴇʀsᴛᴀɴᴅ  Wʜᴀᴛ  Is  {BOT_NAME}  Aɴᴅ  Hᴏᴡ  Tᴏ  Usᴇ  Iᴛ.
+            text=f"""*New To {BOT_NAME}!  Here Is The Quick Start Guide Which Will Help You To  Understand What Is  {BOT_NAME}  And How To Use It.
 
-Cʟɪᴄᴋ  Bᴇʟᴏᴡ  Bᴜᴛᴛᴏɴ  Tᴏ  Aᴅᴅ  Bᴏᴛ  Iɴ  Yᴏᴜʀ  Gʀᴏᴜᴘ. Bᴀsɪᴄ  Tᴏᴜʀ  Sᴛᴀʀᴛᴇᴅ  Tᴏ  Kɴᴏᴡ  Aʙᴏᴜᴛ  Hᴏᴡ  Tᴏ  Usᴇ  Mᴇ*""",
+Click Below Button To Add Bot In Your Group. Basic To Your Started To Know About How To Use Me*""",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
-              [[InlineKeyboardButton(text="𝙎𝙚𝙩𝙪𝙥 𝙏𝙪𝙩𝙤𝙧𝙞𝙖𝙡 🎥", callback_data="tiana_vida")],
-               [InlineKeyboardButton(text="➕️ 𝘼𝙙𝙙 𝙢𝙚 𝙩𝙤 𝙔𝙤𝙪𝙧 𝙂𝙧𝙤𝙪𝙥 ➕️", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")],       
-                [InlineKeyboardButton(text="🔙 𝘽𝙖𝙘𝙠", callback_data="tiana_"),
+              [[InlineKeyboardButton(text=" Sᴇᴛᴜᴘ Tᴜᴛᴏʀɪᴀʟ 🎥", callback_data="tiana_vida")],
+               [InlineKeyboardButton(text="➕️ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ➕️", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")],       
+                [InlineKeyboardButton(text="🔙 Bᴀᴄᴋ", callback_data="tiana_"),
                  InlineKeyboardButton(text="➡️", callback_data="tiana_helpa")]
               ]
             ),
@@ -502,9 +501,9 @@ Nᴏᴛᴇ-  ɴɪɢʜᴛ  ᴍᴏᴅᴇ  ᴄʜᴀᴛs  ɢᴇᴛ  ᴀᴜᴛᴏᴍ�
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
-              [InlineKeyboardButton(text="𝙐𝙥𝙙𝙖𝙩𝙚", url=f"https://t.me/{UPDATE_CHANNEL}"),       
-              InlineKeyboardButton(text="𝙎𝙪𝙥𝙥𝙤𝙧𝙩", url=f"https://t.me/{SUPPORT_CHAT}")],       
-              [InlineKeyboardButton(text="🔙 𝘽𝙖𝙘𝙠", callback_data="about_")]]
+              [InlineKeyboardButton(text="Updates", url=f"https://t.me/{UPDATE_CHANNEL}"),       
+              InlineKeyboardButton(text="Support", url=f"https://t.me/{SUPPORT_CHAT}")],       
+              [InlineKeyboardButton(text="🔙 Back", callback_data="about_")]]
             ),
         )
     elif query.data == "tiana_helpe":
@@ -522,9 +521,9 @@ Aɢᴀɪɴ  Tʜᴀɴᴋs  Fᴏʀ  Usɪɴɢ  Mᴇ
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="➕ 𝘼𝙡𝙡 𝘾𝙤𝙢𝙢𝙖𝙣𝙙𝙨 ➕", callback_data="help_back")],
+                [[InlineKeyboardButton(text="➕ Aʟʟ Cᴏᴍᴍᴀɴᴅs ➕", callback_data="help_back")],
                 [InlineKeyboardButton(text="⬅️", callback_data="tiana_helpd"),
-                InlineKeyboardButton(text="𝙈𝙖𝙞𝙣 𝙈𝙚𝙣𝙪", callback_data="tiana_")]]
+                InlineKeyboardButton(text="Mᴀɪɴ Mᴇɴᴜ", callback_data="tiana_")]]
             ),
         )
     elif query.data == "tiana_music":
@@ -543,12 +542,12 @@ Aɢᴀɪɴ  Tʜᴀɴᴋs  Fᴏʀ  Usɪɴɢ  Mᴇ
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
-               [[InlineKeyboardButton(text="𝙎𝙚𝙩𝙪𝙥 𝙏𝙪𝙩𝙤𝙧𝙞𝙖𝙡 🎥", callback_data="tiana_vidb")],
-                [InlineKeyboardButton(text="𝙋𝙡𝙖𝙮 𝘾𝙤𝙢𝙢𝙖𝙣𝙙𝙨", callback_data="tiana_musica"),
-                 InlineKeyboardButton(text="𝘽𝙤𝙩 𝘾𝙤𝙢𝙢𝙖𝙣𝙙𝙨", callback_data="tiana_musicc")],
-                [InlineKeyboardButton(text="𝘼𝙙𝙢𝙞𝙣 𝘾𝙤𝙢𝙢𝙖𝙣𝙙𝙨", callback_data="tiana_musicb"),
-                 InlineKeyboardButton(text="𝙀𝙭𝙩𝙧𝙖 𝘾𝙤𝙢𝙢𝙖𝙣𝙙𝙨", callback_data="tiana_musicd")],
-                [InlineKeyboardButton(text="🔙 𝘽𝙖𝙘𝙠", callback_data="tiana_")]
+               [[InlineKeyboardButton(text="Sᴇᴛᴜᴘ Tᴜᴛᴏʀɪᴀʟ 🎥", callback_data="tiana_vidb")],
+                [InlineKeyboardButton(text="Pʟᴀʏ Cᴏᴍᴍᴀɴᴅs", callback_data="tiana_musica"),
+                 InlineKeyboardButton(text="Bᴏᴛ Cᴏᴍᴍᴀɴᴅs", callback_data="tiana_musicc")],
+                [InlineKeyboardButton(text="Aᴅᴍɪɴ Cᴏᴍᴍᴀɴᴅs", callback_data="tiana_musicb"),
+                 InlineKeyboardButton(text="Exᴛʀᴀ Cᴏᴍᴍᴀɴᴅs", callback_data="tiana_musicd")],
+                [InlineKeyboardButton(text="🔙 Bᴀᴄᴋ", callback_data="tiana_")]
                ]
             ),
         )
@@ -556,7 +555,7 @@ Aɢᴀɪɴ  Tʜᴀɴᴋs  Fᴏʀ  Usɪɴɢ  Mᴇ
         query.message.edit_text(
             text="""✗*Here is the help for Play Commands*:
 
-*Note*: Tiana Music Bot works on a single merged commands for Music and Video
+*Note*: Music Bot works on a single merged commands for Music and Video
 
 ✗ *Youtube and Telegram Files*:
 
@@ -564,10 +563,10 @@ Aɢᴀɪɴ  Tʜᴀɴᴋs  Fᴏʀ  Usɪɴɢ  Mᴇ
 - Stream Video or Music on Voice Chat by selecting inline Buttons you get
 
 
-✗ *Tiana Database Saved Playlists*:
+✗ *Music Database Saved Playlists*:
 
 /createplaylist
-- Create Your Playlist on Tiana's Server with Custom Name
+- Create Your Playlist on Vps's Server with Custom Name
 
 /playlist 
 - Check Your Saved Playlist On Servers.
@@ -576,11 +575,11 @@ Aɢᴀɪɴ  Tʜᴀɴᴋs  Fᴏʀ  Usɪɴɢ  Mᴇ
 - Delete any saved music in your playlist
 
 /playplaylist 
-- Start playing Your Saved Playlist on Tiana Servers.""",
+- Start playing Your Saved Playlist on vps Servers.""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="🔙 𝘽𝙖𝙘𝙠", callback_data="tiana_music")]]
+                [[InlineKeyboardButton(text="🔙 Bᴀᴄᴋ", callback_data="tiana_music")]]
             ),
         )
     elif query.data == "tiana_musicb":
@@ -620,7 +619,7 @@ Tiana has a additional feature for non-admin users who want to use admin command
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="🔙 𝘽𝙖𝙘𝙠", callback_data="tiana_music")]]
+                [[InlineKeyboardButton(text="🔙 Back", callback_data="tiana_music")]]
             ),
         )
     elif query.data == "tiana_musicc":
@@ -629,7 +628,7 @@ Tiana has a additional feature for non-admin users who want to use admin command
 
 
 /start 
-- Start the Tiana Music Bot.
+- Start the  Music Bot.
 
 /help 
 - Get Commands Helper Menu with detailed explanations of commands.
@@ -641,7 +640,7 @@ Tiana has a additional feature for non-admin users who want to use admin command
 - Ping the Bot and check Ram, Cpu etc stats of Tiana.""",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="🔙 𝘽𝙖𝙘𝙠", callback_data="tiana_music")]]
+                [[InlineKeyboardButton(text="🔙 Bᴀᴄᴋ", callback_data="tiana_music")]]
             ),
         )
     elif query.data == "tiana_musicd":
@@ -657,7 +656,7 @@ Tiana has a additional feature for non-admin users who want to use admin command
 - Check Sudo Users of Tiana Music Bot
 
 /song [Track Name] or [YT Link]
-- Download any track from youtube in mp3 or mp4 formats via Tiana.
+- Download any track from youtube in mp3 or mp4 formats via Music.
 
 /queue
 - Check Queue List of Music.
@@ -666,7 +665,7 @@ Tiana has a additional feature for non-admin users who want to use admin command
 - When enabled, Tiana will be deleting her 3rd last message to keep your chat clean.""",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="🔙 𝘽𝙖𝙘𝙠", callback_data="tiana_music")]]
+                [[InlineKeyboardButton(text="🔙 Bᴀᴄᴋ", callback_data="tiana_music")]]
             ),
         )
     elif query.data == "tiana_about":
@@ -691,7 +690,7 @@ Support
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="🔙 𝘽𝙖𝙘𝙠", callback_data="about_")]]
+                [[InlineKeyboardButton(text="🔙 Bᴀᴄᴋ", callback_data="about_")]]
             ),
         )
     elif query.data == "tiana_support":
@@ -709,7 +708,7 @@ Support
                     InlineKeyboardButton(text="Uᴘᴅᴀᴛᴇꜱ", url=f"https://t.me/{UPDATE_CHANNEL}"),
                  ],
                  [
-                    InlineKeyboardButton(text="🔙 𝘽𝙖𝙘𝙠", callback_data="about_"),
+                    InlineKeyboardButton(text="🔙 Bᴀᴄᴋ", callback_data="about_"),
                  
                  ]
                 ]
@@ -717,15 +716,15 @@ Support
         )
     elif query.data == "tiana_source":
         query.message.edit_text(
-            text="""*Tianabot is Now Open Source Bot Project.*
+            text="""*Now Open Source Bot Project.*
 
 *Click below Button to Get Source Code.*""",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="📄 𝙎𝙤𝙪𝙧𝙘𝙚", url="github.com/Prince-Botz/Tianabot"),                 
-                    InlineKeyboardButton(text="🔙 𝘽𝙖𝙘𝙠", callback_data="about_"),
+                    InlineKeyboardButton(text="📄 Source", url=f"t.me/{SUPPORT_CHAT}"),                 
+                    InlineKeyboardButton(text="🔙 Bᴀᴄᴋ", callback_data="about_"),
                  ]    
                 ]
             ),
@@ -748,24 +747,24 @@ def tiana_about_callback(update: Update, context: CallbackContext):
     query = update.callback_query
     if query.data == "about_":
         query.message.edit_text(
-            text="""𝘾𝙇𝙄𝘾𝙆 𝘽𝙀𝙇𝙊𝙒 𝘽𝙐𝙏𝙏𝙊𝙉 𝙁𝙊𝙍 𝙆𝙉𝙊𝙒 𝙈𝙊𝙍𝙀 𝘼𝘽𝙊𝙐𝙏 𝙈𝙀""",
+            text="""Cʟɪᴄᴋ Bᴇʟᴏᴡ Bᴜᴛᴛᴏɴ Fᴏʀ Kɴᴏᴡ Mᴏʀᴇ Aʙᴏᴜᴛ Mᴇ""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                [
                  [
-                     InlineKeyboardButton(text="❗️ 𝘼𝙗𝙤𝙪𝙩", callback_data="tiana_about"),
-                     InlineKeyboardButton(text="📄 𝙎𝙤𝙪𝙧𝙘𝙚", callback_data="tiana_source"),
+                     InlineKeyboardButton(text="❗️ Aʙᴏᴜᴛ", callback_data="tiana_about"),
+                     InlineKeyboardButton(text="💁 Sᴏᴜʀᴄᴇ", callback_data="tiana_source"),
                  ],
                  [  
-                    InlineKeyboardButton(text="🫂 𝙎𝙪𝙥𝙥𝙤𝙧𝙩", callback_data="tiana_support"),
-                    InlineKeyboardButton(text="👨‍✈️ 𝙊𝙬𝙣𝙚𝙧", url=f"t.me/{OWNER_USERNAME}"),
+                    InlineKeyboardButton(text="🫂 Sᴜᴘᴘᴏʀᴛ", callback_data="tiana_support"),
+                    InlineKeyboardButton(text="👨‍✈️ Oᴡɴᴇʀ", url=f"t.me/{OWNER_USERNAME}"),
                  ],
                  [
-                     InlineKeyboardButton(text="𝙏𝙚𝙧𝙢𝙨 𝘼𝙣𝙙 𝘾𝙤𝙣𝙙𝙞𝙩𝙞𝙤𝙣𝙨❗️", callback_data="tiana_term"),
+                     InlineKeyboardButton(text="Tᴇʀᴍs Aɴᴅ Cᴏɴᴅɪᴛɪᴏɴ❗️", callback_data="tiana_term"),
                  ],
                  [
-                     InlineKeyboardButton(text="🔙 𝘽𝙖𝙘𝙠", callback_data="about_back"),
+                     InlineKeyboardButton(text="🔙 Bᴀᴄᴋ", callback_data="about_back"),
                  ]    
                ]
             ),
@@ -1010,7 +1009,7 @@ def donate(update: Update, context: CallbackContext):
     bot = context.bot
     if chat.type == "private":
         update.effective_message.reply_text(
-            text = "𝙔𝙤𝙪 𝘾𝙖𝙣 𝘿𝙤𝙣𝙖𝙩𝙚 𝙈𝙚 𝙃𝙚𝙧𝙚", parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True, reply_markup=InlineKeyboardMarkup(
+            text = "Yᴏᴜ Cᴀɴ Dᴏɴᴀᴛᴇ ᴍᴇ Hᴇʀᴇ", parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True, reply_markup=InlineKeyboardMarkup(
                [
                  [                   
                     InlineKeyboardButton(text="Dᴏɴᴀᴛᴇ Mᴇ", url=f"{DONATION_LINK}"),
@@ -1022,7 +1021,7 @@ def donate(update: Update, context: CallbackContext):
         try:
             bot.send_message(
                 user.id,
-                text = "𝙔𝙤𝙪 𝘾𝙖𝙣 𝘿𝙤𝙣𝙖𝙩𝙚 𝙈𝙚 𝙃𝙚𝙧𝙚" ,
+                text = "Yᴏᴜ Cᴀɴ Dᴏɴᴀᴛᴇ ᴍᴇ Hᴇʀᴇ" ,
                 parse_mode=ParseMode.MARKDOWN,
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup(
@@ -1066,7 +1065,7 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "𝙏𝙞𝙖𝙣𝙖𝘽𝙤𝙩 𝙐𝙥𝙙𝙖𝙩𝙚𝙙 𝙎𝙪𝙘𝙘𝙚𝙨𝙨𝙛𝙪𝙡𝙡𝙮✅")
+            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "Hᴇʏ Bᴀʙʏ ➛I am Aʟɪᴠᴇ .")
         except Unauthorized:
             LOGGER.warning(
                 "Bot isnt able to send message to support_chat, go and check!"
