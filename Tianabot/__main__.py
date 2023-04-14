@@ -93,19 +93,18 @@ Im Powerfull Management Bot And I Will Help In Managing Your Group.
 ───────────────────────
 """
 
-buttons = [
-    [      
-        InlineKeyboardButton(text="👨‍✈️ Sᴜᴘᴘᴏʀᴛ", url=f"http://t.me/{UPDATE_CHANNEL}"),
-        InlineKeyboardButton(text="Cʜᴀɴɴᴇʟ 🧑🏼‍💻", url=f"https://t.me/{SUPPORT_CHAT}"),
-    ],
+buttons = [ 
    [
-        InlineKeyboardButton(text="💁Bᴀsɪᴄ Iɴғᴏ", callback_data="about_"),
-        InlineKeyboardButton(text="Bᴀsɪᴄ Cᴍᴅ 👷🏻", callback_data="tiana_"),
-    ],
-    [  
-        InlineKeyboardButton(text="✚ Aᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ Gʀᴏᴜᴘ ✚", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"),
-    ], 
-    
+    InlineKeyboardButton( text="🖤 𝐀ᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ 𝐆ʀᴏᴜᴘ 🥀", url=f"http://t.me/Hypermen_rbot?startgroup=true" ) 
+  ],
+  [ 
+    InlineKeyboardButton(text="⚡ 𝐒ᴜᴘᴘᴏʀᴛ", url=f"t.me/{SUPPORT_CHAT}"), 
+    InlineKeyboardButton(text="𝐔ᴘᴅᴀᴛᴇ𝐬🔸", url=f"t.me/{DONATION_LINK}" ), 
+
+  ], 
+  [ 
+   InlineKeyboardButton(text="⚒️ 𝐀ʟʟ 𝐂ᴏᴍᴍᴀɴᴅ𝐬 ⚒️", callback_data="help_back"), 
+],
 ]
 
 TIANA_IMG = f"{START_IMG}"
