@@ -95,11 +95,11 @@ Im Powerfull Management Bot And I Will Help In Managing Your Group.
 
 buttons = [ 
    [
-    InlineKeyboardButton( text="🖤 𝐀ᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ 𝐆ʀᴏᴜᴘ 🥀", url=f"http://t.me/Hypermen_rbot?startgroup=true" ) 
+    InlineKeyboardButton( text="🖤 𝐀ᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ 𝐆ʀᴏᴜᴘ 🥀", url=f"https://t.me/{BOT_USERNAME}?startgroup=true" ) 
   ],
   [ 
-    InlineKeyboardButton(text="⚡ 𝐒ᴜᴘᴘᴏʀᴛ", url=f"t.me/{SUPPORT_CHAT}"), 
-    InlineKeyboardButton(text="𝐔ᴘᴅᴀᴛᴇ𝐬🔸", url=f"t.me/{DONATION_LINK}" ), 
+    InlineKeyboardButton(text="💁Bᴀsɪᴄ Iɴғᴏ", callback_data="about_"), 
+    InlineKeyboardButton(text="Bᴀsɪᴄ Cᴍᴅ 👷🏻", callback_data="tiana_"), 
 
   ], 
   [ 
