@@ -11,22 +11,22 @@ from Tianabot import pbot, START_IMG, SUPPORT_CHAT, BOT_NAME, OWNER_USERNAME
 async def repo(_, message):
     await message.reply_photo(
         photo=START_IMG,
-        caption=f"""✨ **Hey I'm** {BOT_NAME}
+        caption=f"""┗ **Hey I'm** {BOT_NAME}
 
-**Owner : [Click Here](https://t.me/{OWNER_USERNAME})**
-**Python Version :** `{y()}`
-**Library Version :** `{o}`
-**Telethon Version :** `{s}`
-**Pyrogram Version :** `{z}`
+**┗ Creator : [Harsh](https://t.me/{OWNER_USERNAME})**
+**┗ Python Version :** `{y()}`
+**┗ Library Version :** `{o}`
+**┗ Telethon Version :** `{s}`
+**┗ Pyrogram Version :** `{z}`
 
-**Click on Button Bellow For More**
+**┗ Click on Button Bellow For More.**
 """,
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton(text="📄 Source", url="https://github.com/prince-botz/tianabot"), 
+                    InlineKeyboardButton(text="🫂 Channel", url="t.me/Team_Bot_Update"), 
                     InlineKeyboardButton(
-                        "🫂 Support", url=f"https://t.me/{SUPPORT_CHAT}")
+                        "Support 💁", url=f"https://t.me/{SUPPORT_CHAT}")
                 ]
             ]
         )
