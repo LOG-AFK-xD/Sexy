@@ -353,9 +353,9 @@ def info(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                "Health", url="https://t.me/YurikoLogger/5"),
+                                "Health", url="https://t.me/THEBLAZENETWORK/66"),
                             InlineKeyboardButton(
-                                "Disaster", url="https://t.me/YurikoLogger/6")
+                                "Disaster", url="https://t.me/THEBLAZENETWORK/67")
                         ],
                     ]
                 ),
@@ -371,9 +371,9 @@ def info(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                "Health", url="https://t.me/YurikoLogger/5"),
+                                "Health", url="https://t.me/THEBLAZENETWORK/66"),
                             InlineKeyboardButton(
-                                "Disaster", url="https://t.me/YurikoLogger/6")
+                                "Disaster", url="https://t.me/THEBLAZENETWORK/67")
                         ],
                     ]
                 ),
@@ -563,7 +563,7 @@ When marked as AFK, any mentions will be replied to with a message to say you're
  ❍ /info*:* get information about a user. 
  
 *What is that health thingy?*
- Come and see [HP System explained](https://t.me/OnePunchUpdates/192)
+ Come and see [HP System explained](https://t.me/THEBLAZENETWORK)
 """
 
 SET_BIO_HANDLER = DisableAbleCommandHandler("setbio", set_about_bio)
